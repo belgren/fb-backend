@@ -117,7 +117,7 @@ app.get('/api/user/logout', function(req, res){
   })
 })
 
-
+ 
 //get a post
 app.get('/api/posts/:page?', function(req, res){
   var pageNumber = 1;
