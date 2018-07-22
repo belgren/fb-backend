@@ -3,7 +3,7 @@ var express = require('express');
 var exphbs  = require('express-handlebars');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var Token = require('./models').Token;
+var Token = require('./models').Token; 
 var User = require('./models').User;
 var Post = require('./models').Post;
 
@@ -117,7 +117,7 @@ app.get('/api/user/logout', function(req, res){
   })
 })
 
- 
+
 //get a post
 app.get('/api/posts/:page?', function(req, res){
   var pageNumber = 1;
