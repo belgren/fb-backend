@@ -1,1 +1,1 @@
-This portion of the project defines the API that is referenced in the associated 'fb-frontend' repo.  I built it using Express, JQuery and MongoDB, and defined routes allowing users to register, login, create posts, view other's posts and like and comment on them.
+This repo defines the API portion of my social media app and is referenced in the associated 'fb-frontend' portion of the porject.  I built this backend using Express, JQuery and MongoDB, and defined routes allowing users to register, login, create posts, view other's posts and like and comment on them.
