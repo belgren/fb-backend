@@ -260,7 +260,7 @@ app.post('/api/posts/comments/:post_id', function(req, res){
   var postId = req.params.post_id;
   var token = req.query.token;
   var content = req.body.content;
-  console.log("Token: ", token, "postId: ", postId, 'content: ', content);
+  console.log('in backend, postId: ', postId, " token: ", token, " content: ", content);
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
@@ -331,7 +331,6 @@ app.post('/api/posts/comments/:post_id', function(req, res){
 app.get('/api/posts/likes/:post_id', function(req, res){
   var token = req.query.token;
   var postId = req.params.post_id;
-  console.log("in backend, postId: ", postId, 'token: ', token);
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
