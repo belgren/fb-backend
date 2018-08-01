@@ -76,8 +76,8 @@ app.post('/api/user/register', function(req, res){
 
 app.post('/api/user/login', function(req, res){
   console.log('in login');
-  var email = req.query.email;
-  var password = req.query.password;
+  var email = req.body.email;
+  var password = req.body.password;
   var token = email + new Date();
   var userId;
   User.findOne({email: email}, function(err, user){
@@ -163,7 +163,7 @@ app.get('/api/posts/:page?', function(req, res){
 //post a post
 app.post('/api/posts', function(req, res){
   var token = req.query.token;
-  var content = req.query.content;
+  var content = req.body.content;
   var date = new Date();
   Token.findOne({token: token}, function(err, token){
     if (err){
