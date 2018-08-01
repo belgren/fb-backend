@@ -51,10 +51,10 @@ app.post('/api/user/register', function(req, res){
   // var lname = req.body.lname;
   // var email = req.body.email;
   // var password = req.body.password;
-  var fname = req.query.fname;
-  var lname = req.query.lname;
-  var email = req.query.email;
-  var password = req.query.password;
+  var fname = req.body.fname;
+  var lname = req.body.lname;
+  var email = req.body.email;
+  var password = req.body.password;
   var newUser = new User({
     fname: fname,
     lname: lname,
