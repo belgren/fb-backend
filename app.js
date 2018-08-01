@@ -330,6 +330,7 @@ app.post('/api/posts/comments/:post_id', function(req, res){
   });
 })
 
+//like a post
 app.get('/api/posts/likes/:post_id', function(req, res){
   var token = req.query.token;
   var postId = req.params.post_id;
@@ -403,6 +404,7 @@ app.get('/api/posts/likes/:post_id', function(req, res){
   });
 });
 
+//delete a post 
 app.delete('/api/posts/:post_id', function(req, res){
   var token = req.query.token;
   var postId = req.params.post_id;

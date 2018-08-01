@@ -1,0 +1,56 @@
+body{
+  background-color: #e9ebee;
+}
+/* banner color #4267b2 */
+
+.header{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: block;
+  text-align: center;
+}
+
+.container{
+  background-color: #4267b2;
+  padding-top: 20px;
+  text-align: center;
+  width: 70%;
+}
+#icon {
+  height: 150px;
+}
+.register-button{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.postApost{
+  padding-bottom: 10px;
+}
+
+.comment{
+  opacity: 0.6;
+  border: 1px solid grey;
+  text-align: center;
+  margin-right: 90px;
+  margin-left: 90px;
+}
+
+.logout{
+  padding-left: 15px;
+  padding-top: 15px;
+}
+.post{
+  text-align: left;
+  padding-bottom: 20px;
+  text-align: center;
+  border: solid 1px black;
+}
+
+.like{
+  display: inline-block;
+}
+
+.likes{
+  display: inline;
+}
