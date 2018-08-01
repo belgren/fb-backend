@@ -116,7 +116,9 @@ app.post('/api/user/login', function(req, res){
 
 
 app.get('/api/user/logout', function(req, res){
+  console.log('in backed logout route.')
   var token = req.query.token;
+  console.log("token", token);
   Token.remove({token: token}, function(err){
     if (err){
       console.log("unable to delete token");
