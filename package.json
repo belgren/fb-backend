@@ -6,6 +6,22 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
     "mongoose": "^5.2.3"
-  }
+  },
+  "name": "fb-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belgren/fb-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belgren/fb-backend/issues"
+  },
+  "homepage": "https://github.com/belgren/fb-backend#readme",
+  "description": ""
 }

@@ -3,7 +3,7 @@ var express = require('express');
 var exphbs  = require('express-handlebars');
 var router = express.Router();
 var bodyParser = require('body-parser');
-var Token = require('./models').Token; 
+var Token = require('./models').Token;
 var User = require('./models').User;
 var Post = require('./models').Post;
 
@@ -29,11 +29,16 @@ mongoose.connect(process.env.MONGODB_URI);
 // Handlabars setup
 app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
+app.set('views', '../fb-frontend')
 // Parse req.body contents
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 ///////body////////
+
+app.get('/', function(req, res){
+  res.render('')
+})
 
 app.post('/api/user/register', function(req, res){
   // var fname = req.body.fname;
@@ -63,6 +68,7 @@ app.post('/api/user/register', function(req, res){
 
 
 app.post('/api/user/login', function(req, res){
+  console.log('in login');
   var email = req.query.email;
   var password = req.query.password;
   var token = email + new Date();
