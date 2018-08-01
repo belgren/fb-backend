@@ -51,6 +51,7 @@ app.post('/api/user/register', function(req, res){
   // var lname = req.body.lname;
   // var email = req.body.email;
   // var password = req.body.password;
+  console.log('here in backend')
   var fname = req.body.fname;
   var lname = req.body.lname;
   var email = req.body.email;
