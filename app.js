@@ -162,7 +162,7 @@ app.get('/api/posts/:page?', function(req, res){
 
 //post a post
 app.post('/api/posts', function(req, res){
-  var token = req.params.token;
+  var token = req.body.token;
   var content = req.body.content;
   var date = new Date();
   console.log('In post a post in fb backend. token: ', token, 'content', content);
