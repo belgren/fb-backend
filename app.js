@@ -51,7 +51,6 @@ app.post('/api/user/register', function(req, res){
   // var lname = req.body.lname;
   // var email = req.body.email;
   // var password = req.body.password;
-  console.log('here in backend')
   var fname = req.body.fname;
   var lname = req.body.lname;
   var email = req.body.email;
@@ -117,7 +116,7 @@ app.post('/api/user/login', function(req, res){
 
 
 app.get('/api/user/logout', function(req, res){
-  var token = req.query.token;
+  var token = req.body.token;
   Token.remove({token: token}, function(err){
     if (err){
       console.log("unable to delete token");
@@ -137,7 +136,7 @@ app.get('/api/posts/:page?', function(req, res){
   if (req.params.page){
     pageNumber = req.params.page;
   };
-  var token = req.query.token;
+  var token = req.body.token;
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
@@ -165,7 +164,6 @@ app.post('/api/posts', function(req, res){
   var token = req.body.token;
   var content = req.body.content;
   var date = new Date();
-  console.log('In post a post in fb backend. token: ', token, 'content', content);
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
@@ -220,7 +218,7 @@ app.post('/api/posts', function(req, res){
 
   //get comment
 app.get('/api/posts/comments/:post_id', function(req, res){
-  var token = req.query.token;
+  var token = req.body.token;
   var postId = req.params.post_id;
   Token.findOne({token: token}, function(err, token){
     if (err){
@@ -258,7 +256,7 @@ app.get('/api/posts/comments/:post_id', function(req, res){
 // // post comment
 app.post('/api/posts/comments/:post_id', function(req, res){
   var postId = req.params.post_id;
-  var token = req.query.token;
+  var token = req.body.token;
   var content = req.body.content;
   console.log("Token: ", token, "postId: ", postId, 'content: ', content);
   Token.findOne({token: token}, function(err, token){
@@ -329,8 +327,9 @@ app.post('/api/posts/comments/:post_id', function(req, res){
 })
 
 app.get('/api/posts/likes/:post_id', function(req, res){
-  var token = req.query.token;
+  var token = req.body.token;
   var postId = req.params.post_id;
+  console.log("in backend, postId: ", postId)
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
@@ -402,7 +401,7 @@ app.get('/api/posts/likes/:post_id', function(req, res){
 });
 
 app.delete('/api/posts/:post_id', function(req, res){
-  var token = req.query.token;
+  var token = req.body.token;
   var postId = req.params.post_id;
   Token.findOne({token: token}, function(err, token){
     if (err){
@@ -441,9 +440,9 @@ app.delete('/api/posts/:post_id', function(req, res){
 })
 
 app.put('/api/posts/:post_id', function(req, res){
-  var token = req.query.token;
+  var token = req.body.token;
   var postId = req.params.post_id;
-  var new_content = req.query.content;
+  var new_content = req.body.content;
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
