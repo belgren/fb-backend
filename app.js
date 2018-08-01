@@ -75,7 +75,6 @@ app.post('/api/user/register', function(req, res){
 
 
 app.post('/api/user/login', function(req, res){
-  console.log('in login');
   var email = req.body.email;
   var password = req.body.password;
   var token = email + new Date();
@@ -123,7 +122,9 @@ app.get('/api/user/logout', function(req, res){
       console.log("unable to delete token");
       return;
     }
-    console.log("successfully deleted Token");
+    else if (token == null){
+      res.status(400).send("Invalid token")
+    }
     res.status(200).json({
       "success": true,
     })
