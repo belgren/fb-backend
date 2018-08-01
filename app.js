@@ -260,7 +260,6 @@ app.post('/api/posts/comments/:post_id', function(req, res){
   var postId = req.params.post_id;
   var token = req.body.token;
   var content = req.body.content;
-  console.log('in backend, postId: ', postId, " req.body.token: ", token, "req.params.token: ", req.params.token, "req.query.token: ", req.query.token, " content: ", content);
   Token.findOne({token: token}, function(err, token){
     if (err){
       console.log("Unable to authenticate token");
